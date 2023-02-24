@@ -21,4 +21,4 @@ WITH t1 as(
 		 FROM cd.members)
 SELECT t1.fn memfname,t1.sr recsname,t2.fn recfname,t2.sr recsname FROM --joined the tables using left join since I wanted to retain all the records from the first table and show the recommenders only if any were present
 t1 LEFT JOIN t2 on t1.r=t2.id
-ORDER BY 2,1                                          --ordered by surname and firstname
+ORDER BY 2,1                                          --ordered by surname and firstname.

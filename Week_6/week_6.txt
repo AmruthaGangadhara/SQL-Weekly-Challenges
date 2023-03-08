@@ -21,3 +21,20 @@ The output table should consist of facility id, month and slots, sorted by the i
 When calculating the aggregated values for all months and all facids, return null values in the month and facid columns..*/
  
 Solution: 
+
+WITH T1 AS (SELECT f.facid facid,date_part('month',b.starttime) as month,sum(b.slots) as slots
+FROM cd.facilities f INNER JOIN cd.bookings b
+on f.facid=b.facid
+WHERE date_part('year',b.starttime)='2012'
+GROUP BY 1,2
+ORDER BY 1,2)
+SELECT facid,month,slots
+FROM T1
+UNION ALL
+SELECT facid,NULL,sum(slots) slots
+FROM T1
+GROUP BY 1
+UNION ALL
+SELECT null,null,sum(slots) slots
+FROM T1
+ORDER BY facid,month

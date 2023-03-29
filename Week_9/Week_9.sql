@@ -1,4 +1,4 @@
-/*question 1*/
+/*question 1
 Table: Person
 
 +-------------+---------+
@@ -17,7 +17,7 @@ Return the result table in any order.
 
 The query result format is in the following example.
 
-Solution:
+Solution:*/
 
 
 SELECT email Email
@@ -25,7 +25,7 @@ FROM person
 GROUP BY email
 HAVING count(*)>1     --used having clause as I had to filter the output once the data was aggregated since i was looking for email with count more than 1
 
-/* question 2 */
+/* question 2
 Table: Activity
 
 +--------------+---------+
@@ -45,7 +45,7 @@ Write an SQL query to report the first login date for each player.
 
 Return the result table in any order.
 
-The query result format is in the following example.
+The query result format is in the following example.*/
 
 
 SELECT player_id,min(event_date) first_login
@@ -53,7 +53,7 @@ FROM Activity
 GROUP BY 1  --MIN returns the earliest date
 
 
-/* question 3 */
+/* question 3 
 
 Table: World
 
@@ -78,7 +78,7 @@ Write an SQL query to report the name, population, and area of the big countries
 
 Return the result table in any order.
 
-The query result format is in the following example.
+The query result format is in the following example. */
 
 SELECT name,population,area
 FROM world

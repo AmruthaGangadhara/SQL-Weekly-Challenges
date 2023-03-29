@@ -1,5 +1,5 @@
 /*Question 1
-Return a count of bookings for each month, sorted by month
+Return a count of bookings for each month, sorted by month*/
 
 Solution 1:
 
@@ -13,7 +13,7 @@ ORDER BY 1
 /*Question 2
 
 Produce a list of each member name, id, and their first booking after September 1st 2012. Order by member ID.
-Solution: 
+Solution: */
 
 SELECT m.surname,m.firstname,m.memid,min(b.starttime)
 FROM cd.bookings b INNER JOIN 

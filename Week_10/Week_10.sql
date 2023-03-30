@@ -75,7 +75,7 @@ Each row of this table contains information about one order. This includes the I
 
 Write an SQL query to report the names of all the salespersons who did not have any orders related to the company with the name "RED".
 
-Return the result table in any order.
+Return the result table in any order.*/
 
 Solution :
 SELECT name from salesperson where name not in (SELECT s.name name

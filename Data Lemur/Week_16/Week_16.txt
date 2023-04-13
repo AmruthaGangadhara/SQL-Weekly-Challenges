@@ -1,0 +1,21 @@
+/* QUESTION
+Given the reviews table, write a query to get the average stars for each product every month.
+
+The output should include the month in numerical value, product id, and average star rating rounded to two decimal places. Sort the output based on month followed by the product id.
+
+P.S. If you've read the Ace the Data Science Interview, and liked it, consider writing us a review?
+
+reviews Table:
+Column Name	Type
+review_id	integer
+user_id	integer
+submit_date	datetime
+product_id	integer
+stars	integer (1-5) */
+
+Solution:
+
+SELECT date_part('month',submit_date) mth ,product_id,ROUND(AVG(stars),2) avg_stars
+FROM reviews
+GROUP BY 1,2
+ORDER BY 1,2

@@ -18,7 +18,7 @@ electronics	vacuum	178	152.00	04/05/2022 12:00:00
 electronics	wireless headset	156	249.90	07/08/2022 12:00:00
 electronics	vacuum	145	189.00	07/15/2022 12:00:00
 
-Solution:
+Solution: */
 
 with cte as (SELECT DISTINCT category,product,
 sum(spend) OVER(PARTITION BY category,product)  total_spend

@@ -12,7 +12,7 @@ msg	string
 tweet_date	timestamp
 
 
-Solution:
+Solution:*/
 
 WITH CTE AS (SELECT user_id,count(*) num_tweets
 FROM tweets

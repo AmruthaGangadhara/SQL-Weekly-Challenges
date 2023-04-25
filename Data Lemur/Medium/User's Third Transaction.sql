@@ -16,7 +16,7 @@ user_id	spend	transaction_date
 145	24.99	01/26/2022 12:00:00
 111	89.60	02/05/2022 12:00:00
 
-Solution:
+Solution: */
 
 WITH CTE AS (SELECT *,
 RANK() OVER(PARTITION BY user_id ORDER BY transaction_date) trans_num

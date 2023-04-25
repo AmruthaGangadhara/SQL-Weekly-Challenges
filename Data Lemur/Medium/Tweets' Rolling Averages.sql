@@ -12,7 +12,9 @@ tweets Table:
 Column Name	Type
 user_id	integer
 tweet_date	timestamp
-tweet_count	integer
+tweet_count	integer */
+
+Solution:
 
 
 WITH cte as (SELECT user_id,tweet_date,AVG(tweet_count)

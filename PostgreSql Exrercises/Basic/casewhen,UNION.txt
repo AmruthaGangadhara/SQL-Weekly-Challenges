@@ -1,0 +1,26 @@
+Question
+
+How can you produce a list of facilities, with each labelled as 'cheap' or 'expensive' depending on if their monthly maintenance cost is more than $100? Return the name and monthly maintenance of the facilities in question.
+
+SELECT name,
+       CASE WHEN monthlymaintenance>100 THEN 'expensive'
+	   ELSE 'cheap' END AS cost
+FROM cd.facilities
+
+Question
+
+How can you produce a list of members who joined after the start of September 2012? Return the memid, surname, firstname, and joindate of the members in question.
+
+SELECT memid,surname,firstname,joindate
+FROM cd.members
+WHERE joindate>'2012-09-01'
+
+Question
+You, for some reason, want a combined list of all surnames and all facility names. Yes, this is a contrived example :-). Produce that list!
+
+
+SELECT surname FROM cd.members
+
+UNION    #UNION removes duplicates whereas UNIONALL does not
+
+SELECT name FROM cd.facilities

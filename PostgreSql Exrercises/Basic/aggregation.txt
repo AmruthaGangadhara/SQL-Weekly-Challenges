@@ -1,0 +1,22 @@
+Question
+You'd like to get the signup date of your last member. How can you retrieve this information?
+
+
+SELECT MAX(joindate)
+FROM cd.members
+
+
+Question
+You'd like to get the first and last name of the last member(s) who signed up - not just the date. How can you do that?
+Solution 1:
+
+
+SELECT firstname,surname,joindate
+FROM cd.members WHERE joindate = (SELECT MAX(joindate) FROM cd.members)
+
+Solution 2:
+
+SELECT firstname,surname,joindate
+FROM cd.members
+ORDER BY 3 DESC
+LIMIT 1  
